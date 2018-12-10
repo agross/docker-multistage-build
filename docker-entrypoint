@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+if [ "$1" == 'run' ]; then
+  printf 'Running app:\n'
+  ./app
+
+  if ! which gcc; then
+    printf 'gcc not found\n'
+  fi
+
+  exit
+fi
+
+exec "$@"
